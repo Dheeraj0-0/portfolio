@@ -18,12 +18,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { name, email, message } = contactSchema.parse(req.body);
       
-      // In a real application, you would send an email here
-      // For now, we'll just log the contact form submission
+      // Store the contact form submission in the database
       console.log("Contact form submission:", { name, email, message });
       
-      // You could store this in a database or send via email service
-      // await storage.createContactSubmission({ name, email, message });
+      // Store in database
+      await storage.createContactSubmission({ name, email, message });
       
       res.json({ 
         success: true, 
@@ -97,6 +96,23 @@ CGPA: 7.71/10
       res.status(500).json({ 
         success: false, 
         message: "Error downloading resume" 
+      });
+    }
+  });
+
+  // Admin endpoint to view contact submissions (for demo purposes)
+  app.get("/api/admin/contacts", async (req, res) => {
+    try {
+      const submissions = await storage.getContactSubmissions();
+      res.json({ 
+        success: true, 
+        data: submissions 
+      });
+    } catch (error) {
+      console.error("Error fetching contact submissions:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Error fetching contact submissions" 
       });
     }
   });

@@ -20,6 +20,12 @@ Contact Information:
 - Made LinkedIn and GitHub links clickable in contact section
 - Updated resume download content with new contact details
 - Improved layout to match user's design preferences with better button placement
+- **Added PostgreSQL database integration:**
+  - Created database connection using Neon serverless PostgreSQL
+  - Added contact submissions table to store form data
+  - Replaced in-memory storage with DatabaseStorage class
+  - Contact form now saves all submissions to database
+  - Added admin endpoint to view contact submissions
 
 ## System Architecture
 
@@ -49,7 +55,8 @@ The application follows a monorepo structure with clear separation of concerns:
 - **Development**: Hot reload with Vite development server integration
 
 ### Database Schema
-- **Users Table**: Basic user authentication structure
+- **Users Table**: Basic user authentication structure  
+- **Contact Submissions Table**: Stores contact form submissions with name, email, message, and timestamp
 - **Connection**: Neon Database serverless PostgreSQL
 - **Migrations**: Drizzle Kit for schema management
 
@@ -62,9 +69,10 @@ The application follows a monorepo structure with clear separation of concerns:
 5. **UI Updates**: React Query manages cache invalidation and UI updates
 
 ### Key Data Flows:
-- Contact form submission: Client → API validation → Email processing
+- Contact form submission: Client → API validation → Database storage
 - Resume download: Direct file serving through Express static handler
 - User authentication: Session-based auth with PostgreSQL storage
+- Admin contact viewing: API endpoint → Database query → JSON response
 
 ## External Dependencies
 
