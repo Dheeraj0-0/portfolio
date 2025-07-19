@@ -7,8 +7,9 @@ This is a completely static version of Dheeraj Parihar's portfolio website. It r
 ✅ **Fully Static** - No server dependencies
 ✅ **Professional Design** - Modern, responsive layout
 ✅ **Contact Form** - Opens email client with pre-filled data
-✅ **Resume Download** - Downloads resume as text file
+✅ **Resume Download** - Downloads resume as text file with credential URLs
 ✅ **Social Links** - Direct links to LinkedIn, GitHub, and email
+✅ **Certification Links** - Clickable badges linking to credential verification
 ✅ **Fast Loading** - Optimized static assets
 
 ## Deployment Options

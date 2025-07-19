@@ -20,6 +20,13 @@ Contact Information:
 - Made LinkedIn and GitHub links clickable in contact section
 - Updated resume download content with new contact details
 - Improved layout to match user's design preferences with better button placement
+- **Added hyperlinks to certification credentials:**
+  - Azure Administrator (AZ-104): Microsoft Learn verification link
+  - Azure Fundamentals (AZ-900): Microsoft Learn verification link
+  - Google Cloud Skills Boost: Public profile with project badges
+  - Networking Basics: Credly badge verification
+  - AWS Fundamentals: Coursera specialization certificate
+  - All certification badges now clickable for credential verification
 - **Added PostgreSQL database integration:**
   - Created database connection using Neon serverless PostgreSQL
   - Added contact submissions table to store form data

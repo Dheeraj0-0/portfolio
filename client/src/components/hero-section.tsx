@@ -34,10 +34,15 @@ KEY SKILLS:
 
 CERTIFICATIONS:
 • Microsoft Certified: Azure Administrator Associate (AZ-104)
+  https://learn.microsoft.com/en-us/users/dheerajparihar-2027/credentials/5642cb1f01cd074f
 • Microsoft Certified: Azure Fundamentals (AZ-900)
+  https://learn.microsoft.com/en-gb/users/dheerajparihar-2027/credentials/515b573f4911b0e
 • Google Cloud Skills Boost
+  https://www.cloudskillsboost.google/public_profiles/89643b02-2aaf-4acf-8f41-a1298a02824d
 • Networking Basics (Cisco Network Academy)
+  https://www.credly.com/badges/289a6bfb-e410-43e8-b4d7-929aef573400/linked_in_profile
 • AWS Fundamentals (Coursera)
+  https://www.coursera.org/account/accomplishments/specialization/WB2ED8EAU5DW
 
 PROJECTS:
 1. Secure E-Commerce Platform Deployment
