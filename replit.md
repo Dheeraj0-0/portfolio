@@ -44,6 +44,11 @@ Contact Information:
     - Added .vercelignore to exclude server files
     - Generated step-by-step deployment guide
     - Optimized for fast CDN delivery and caching
+  - **Added PDF resume functionality:**
+    - Integrated actual PDF resume from attached assets
+    - Updated download buttons to serve professional PDF file
+    - Resume accessible at /Dheeraj_Parihar_Resume.pdf
+    - Maintains all certification verification links
 
 ## System Architecture
 
