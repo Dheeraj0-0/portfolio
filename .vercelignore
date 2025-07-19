@@ -1,0 +1,8 @@
+server/
+shared/
+node_modules/
+.env
+*.log
+dist/
+.replit
+README.md

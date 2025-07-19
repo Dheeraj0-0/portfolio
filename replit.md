@@ -39,6 +39,11 @@ Contact Information:
   - Resume download generates and downloads text file client-side
   - Built optimized static assets in dist-static/ directory
   - Added deployment script and documentation for static hosting
+  - **Prepared for Vercel deployment:**
+    - Created vercel.json configuration file
+    - Added .vercelignore to exclude server files
+    - Generated step-by-step deployment guide
+    - Optimized for fast CDN delivery and caching
 
 ## System Architecture
 
