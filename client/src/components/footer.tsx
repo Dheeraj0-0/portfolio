@@ -9,21 +9,25 @@ export default function Footer() {
           <div className="text-gray-400 mb-4">Associate Engineer & Azure Certified Professional</div>
           <div className="flex justify-center space-x-6 text-gray-400">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/dheeraj-parihar"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://github.com/Dheeraj0-0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="mailto:dheerajparihardrj@gmail.com"
+              href="mailto:workwithdheeraj@outlook.com"
               className="hover:text-white transition-colors"
               aria-label="Email"
             >

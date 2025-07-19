@@ -50,7 +50,9 @@ Associate Engineer & Azure Certified Professional
 Contact Information:
 - Location: Haldwani, Uttarakhand, India
 - Phone: +91 8979082205
-- Email: dheerajparihardrj@gmail.com
+- Email: workwithdheeraj@outlook.com
+- LinkedIn: linkedin.com/in/dheeraj-parihar
+- GitHub: github.com/Dheeraj0-0
 
 KEY SKILLS:
 • Cloud & DevOps: Azure, Terraform, Ansible, Docker, Kubernetes, CI/CD (Jenkins, Azure DevOps)

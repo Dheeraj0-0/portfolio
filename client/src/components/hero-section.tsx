@@ -35,7 +35,7 @@ export default function HeroSection() {
               Skilled in Python, automation, and secure application deployment with a strong foundation in modern development practices. 
               Passionate about leveraging cloud solutions to solve real-world problems and eager to contribute fresh perspectives to innovative technology teams.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button
                 onClick={handleGetInTouch}
                 className="bg-white text-primary hover:bg-blue-50 px-8 py-3 font-semibold shadow-lg"
@@ -47,7 +47,35 @@ export default function HeroSection() {
                 variant="outline"
                 className="bg-transparent border-2 border-white text-white px-8 py-3 font-semibold hover:bg-white hover:text-primary"
               >
-                View Resume
+                Download Resume
+              </Button>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <Button
+                variant="outline"
+                size="sm"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
+                onClick={() => window.open("https://github.com/Dheeraj0-0", "_blank")}
+              >
+                GitHub
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
+                onClick={() => window.open("https://www.linkedin.com/in/dheeraj-parihar", "_blank")}
+              >
+                LinkedIn
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
+                onClick={() => window.location.href = "mailto:workwithdheeraj@outlook.com"}
+              >
+                Email
               </Button>
             </div>
           </div>

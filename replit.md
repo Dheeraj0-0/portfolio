@@ -7,6 +7,19 @@ This is a modern, responsive portfolio website for Dheeraj Parihar, an Associate
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Contact Information:
+- Email: workwithdheeraj@outlook.com
+- LinkedIn: https://www.linkedin.com/in/dheeraj-parihar
+- GitHub: https://github.com/Dheeraj0-0
+
+## Recent Changes
+
+### July 19, 2025
+- Updated contact information across all components with new email, LinkedIn, and GitHub links
+- Enhanced hero section with social media buttons (GitHub, LinkedIn, Email)
+- Made LinkedIn and GitHub links clickable in contact section
+- Updated resume download content with new contact details
+- Improved layout to match user's design preferences with better button placement
 
 ## System Architecture
 

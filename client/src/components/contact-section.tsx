@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { Mail, Phone, MapPin, Linkedin, Download } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Download, Github } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -68,7 +68,7 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-5 w-5 text-blue-300" />,
       label: "Email",
-      value: "dheerajparihardrj@gmail.com",
+      value: "workwithdheeraj@outlook.com",
     },
     {
       icon: <Phone className="h-5 w-5 text-blue-300" />,
@@ -83,7 +83,14 @@ export default function ContactSection() {
     {
       icon: <Linkedin className="h-5 w-5 text-blue-300" />,
       label: "LinkedIn",
-      value: "Connect with me",
+      value: "linkedin.com/in/dheeraj-parihar",
+      link: "https://www.linkedin.com/in/dheeraj-parihar",
+    },
+    {
+      icon: <Github className="h-5 w-5 text-blue-300" />,
+      label: "GitHub",
+      value: "github.com/Dheeraj0-0",
+      link: "https://github.com/Dheeraj0-0",
     },
   ];
 
@@ -106,7 +113,18 @@ export default function ContactSection() {
                   {info.icon}
                   <div className="ml-4">
                     <div className="font-medium">{info.label}</div>
-                    <div className="text-blue-100">{info.value}</div>
+                    {info.link ? (
+                      <a 
+                        href={info.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-100 hover:text-white transition-colors"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <div className="text-blue-100">{info.value}</div>
+                    )}
                   </div>
                 </div>
               ))}
