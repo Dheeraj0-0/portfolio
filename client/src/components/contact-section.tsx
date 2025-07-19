@@ -8,8 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+// Removed API dependencies for static build
 import { Mail, Phone, MapPin, Linkedin, Download, Github } from "lucide-react";
 
 const contactFormSchema = z.object({
@@ -33,35 +32,78 @@ export default function ContactSection() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: (data: ContactFormData) => apiRequest("POST", "/api/contact", data),
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
-      });
-    },
-  });
-
   const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+    // For static website, create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact from ${data.name}`);
+    const body = encodeURIComponent(
+      `Hi Dheeraj,\n\nName: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}\n\nBest regards,\n${data.name}`
+    );
+    const mailtoLink = `mailto:workwithdheeraj@outlook.com?subject=${subject}&body=${body}`;
+    
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Opening email client...",
+      description: "Your default email client will open with the message pre-filled.",
+    });
+    
+    form.reset();
   };
 
   const handleDownloadResume = () => {
+    // Static resume download
+    const resumeContent = `DHEERAJ PARIHAR
+Associate Engineer & Azure Certified Professional
+
+Contact Information:
+- Location: Haldwani, Uttarakhand, India
+- Phone: +91 8979082205
+- Email: workwithdheeraj@outlook.com
+- LinkedIn: linkedin.com/in/dheeraj-parihar
+- GitHub: github.com/Dheeraj0-0
+
+KEY SKILLS:
+• Cloud & DevOps: Azure, Terraform, Ansible, Docker, Kubernetes, CI/CD (Jenkins, Azure DevOps)
+• Programming & Scripting: Python, Bash, OOP, Data Structures and Algorithms
+• Web & Application Development: Full-stack concepts, Git, GitHub
+• Database & Networking: SQL, NoSQL, TCP/IP, Load Balancing
+• Monitoring & Security: Azure Monitor, CloudWatch, Cloud Security
+• Soft Skills: Problem-solving, Team Collaboration, Agile, Time Management
+
+CERTIFICATIONS:
+• Microsoft Certified: Azure Administrator Associate (AZ-104)
+• Microsoft Certified: Azure Fundamentals (AZ-900)
+• Google Cloud Skills Boost
+• Networking Basics (Cisco Network Academy)
+• AWS Fundamentals (Coursera)
+
+PROJECTS:
+1. Secure E-Commerce Platform Deployment
+   - Automated deployment pipelines with CI/CD integration
+   - Implemented robust security measures and network policies
+
+2. Phishing URL Detection Project
+   - Web-based application for identifying malicious URLs
+   - Machine learning algorithms with high accuracy detection
+
+3. Azure Active Directory Monitoring Projects
+   - Configured Splunk for real-time Azure AD log monitoring
+   - Automated reporting and compliance tracking
+
+EDUCATION:
+Bachelor of Computer Applications (August 2022 - July 2025)
+Graphic Era Hill University, Uttarakhand, India
+CGPA: 7.71/10`;
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
-    link.href = "/api/download-resume";
-    link.download = "Dheeraj_Parihar_Resume.pdf";
+    link.href = url;
+    link.download = "Dheeraj_Parihar_Resume.txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   const contactInfo = [
@@ -199,10 +241,9 @@ export default function ContactSection() {
 
                 <Button
                   type="submit"
-                  disabled={contactMutation.isPending}
                   className="w-full bg-white text-primary hover:bg-blue-50"
                 >
-                  {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  Send Message
                 </Button>
               </form>
             </CardContent>

@@ -26,6 +26,12 @@ Contact Information:
   - Replaced in-memory storage with DatabaseStorage class
   - Contact form now saves all submissions to database
   - Added admin endpoint to view contact submissions
+- **Created completely static version:**
+  - Removed all backend dependencies for pure static deployment
+  - Contact form now opens email client with pre-filled data
+  - Resume download generates and downloads text file client-side
+  - Built optimized static assets in dist-static/ directory
+  - Added deployment script and documentation for static hosting
 
 ## System Architecture
 

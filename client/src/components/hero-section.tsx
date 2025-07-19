@@ -13,13 +13,59 @@ export default function HeroSection() {
   };
 
   const handleViewResume = () => {
-    // Create a download link for the resume
+    // For static website, create a resume content and download as text file
+    const resumeContent = `DHEERAJ PARIHAR
+Associate Engineer & Azure Certified Professional
+
+Contact Information:
+- Location: Haldwani, Uttarakhand, India
+- Phone: +91 8979082205
+- Email: workwithdheeraj@outlook.com
+- LinkedIn: linkedin.com/in/dheeraj-parihar
+- GitHub: github.com/Dheeraj0-0
+
+KEY SKILLS:
+• Cloud & DevOps: Azure, Terraform, Ansible, Docker, Kubernetes, CI/CD (Jenkins, Azure DevOps)
+• Programming & Scripting: Python, Bash, OOP, Data Structures and Algorithms
+• Web & Application Development: Full-stack concepts, Git, GitHub
+• Database & Networking: SQL, NoSQL, TCP/IP, Load Balancing
+• Monitoring & Security: Azure Monitor, CloudWatch, Cloud Security
+• Soft Skills: Problem-solving, Team Collaboration, Agile, Time Management
+
+CERTIFICATIONS:
+• Microsoft Certified: Azure Administrator Associate (AZ-104)
+• Microsoft Certified: Azure Fundamentals (AZ-900)
+• Google Cloud Skills Boost
+• Networking Basics (Cisco Network Academy)
+• AWS Fundamentals (Coursera)
+
+PROJECTS:
+1. Secure E-Commerce Platform Deployment
+   - Automated deployment pipelines with CI/CD integration
+   - Implemented robust security measures and network policies
+
+2. Phishing URL Detection Project
+   - Web-based application for identifying malicious URLs
+   - Machine learning algorithms with high accuracy detection
+
+3. Azure Active Directory Monitoring Projects
+   - Configured Splunk for real-time Azure AD log monitoring
+   - Automated reporting and compliance tracking
+
+EDUCATION:
+Bachelor of Computer Applications (August 2022 - July 2025)
+Graphic Era Hill University, Uttarakhand, India
+CGPA: 7.71/10`;
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
-    link.href = "/api/download-resume";
-    link.download = "Dheeraj_Parihar_Resume.pdf";
+    link.href = url;
+    link.download = "Dheeraj_Parihar_Resume.txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   return (
