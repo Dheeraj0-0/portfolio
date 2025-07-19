@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import profileImage from "@assets/picofme_1752927334058.png";
 
 export default function HeroSection() {
   const handleGetInTouch = () => {
@@ -22,15 +23,15 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="bg-gradient-to-br from-primary/90 via-primary/80 to-primary text-white">
+    <section id="home" className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Dheeraj Parihar</h1>
-            <h2 className="text-xl md:text-2xl font-medium text-blue-100 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">Dheeraj Parihar</h1>
+            <h2 className="text-xl md:text-2xl font-medium text-white mb-6 drop-shadow-md">
               Associate Engineer & Azure Certified Professional
             </h2>
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+            <p className="text-lg text-white mb-8 leading-relaxed drop-shadow-md">
               Motivated Associate Engineer with Microsoft Azure certifications and hands-on experience in cloud technologies. 
               Skilled in Python, automation, and secure application deployment with a strong foundation in modern development practices. 
               Passionate about leveraging cloud solutions to solve real-world problems and eager to contribute fresh perspectives to innovative technology teams.
@@ -81,8 +82,8 @@ export default function HeroSection() {
           </div>
           <div className="order-1 lg:order-2">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600"
-              alt="Professional developer"
+              src={profileImage}
+              alt="Dheeraj Parihar - Professional Profile"
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
             />
           </div>
