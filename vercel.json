@@ -1,7 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && rm -rf dist-static && mkdir -p dist-static && cp -r dist/public/* dist-static/",
   "outputDirectory": "dist-static",
-  "framework": "vite",
+  "installCommand": "npm install",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
