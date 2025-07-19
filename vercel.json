@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && rm -rf dist-static && mkdir -p dist-static && cp -r dist/public/* dist-static/",
+  "buildCommand": "vite build --outDir dist-static",
   "outputDirectory": "dist-static",
   "installCommand": "npm install",
   "framework": null,
